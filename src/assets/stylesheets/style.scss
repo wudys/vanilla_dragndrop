@@ -1,0 +1,60 @@
+$column_border_color: #cdcdcd;
+$note_border_color: $column_border_color;
+$note_background_color: #f3f4f5;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  overflow-x: auto;
+  height: calc(100vh - 40px);
+}
+
+.header {
+  padding: 20px 20px;
+  font-size: 24px;
+}
+
+.kanban {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-start;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.column {
+  width: 280px;
+  border: 1px solid $column_border_color;
+  min-height: calc(80vh);
+  overflow: auto;
+  margin: 0 20px;
+}
+
+.note {
+  display: block;
+  width: 200px;
+  margin: 30px 0;
+  padding: 30px 10px;
+  border: 1px solid $note_border_color;
+  background: $note_background_color;
+  user-select: none;
+  cursor: move;
+
+  &.drag {
+    opacity: 0.5;
+  }
+
+  &.hover {
+    position: absolute;
+    z-index: 1000;
+    margin: 0;
+    transform: rotate(-5deg);
+  }
+}

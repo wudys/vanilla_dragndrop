@@ -12,6 +12,7 @@
     "dev": "webpack-dev-server --open --mode development"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "ejs": "^3.1.3",
